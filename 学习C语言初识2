@@ -1,0 +1,298 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include <stdio.h>
+
+int main()
+{
+	int arr[10] = { 0 };//10个整型元素的数组
+	int sz = 0;
+	//10*xizeof(int) = 40
+	printf("%d\n", sizeof(arr));
+	//计算数组的元素个数
+	// 个数 = 数组总大小/每个元素的大小
+	sz = sizeof(arr) / sizeof(arr[0]);
+	printf("sz = %d\n", sz);
+	//int a = 10;
+	////sizeof计算的是变量/类型所占空间的大小，单位是字节
+	//printf("%d\n", sizeof(a));//4
+	//printf("%d\n", sizeof(int));
+	////sizeof在计算长度时能省略变量的括号但是算int时不能省略
+	return 0;
+}
+
+////单目操作符
+////双目操作符
+////三目操作符
+//int main()
+//{
+//	//int a = 10;
+//	//int b = 20;
+//	//a + b;// + 双目操作符
+//	//c语言中我们表示真假
+//	//0-假
+//	//非0-真
+//	//int a = 10;
+//	int a = -2;
+//	int b = -a;
+//	int c = +3;//正号都会省略
+//	printf("%d\n", a);
+//	printf("%d\n", !a);
+//	return 0;
+//}
+
+////赋值操作符
+//int main()
+//{
+//	int a = 10;
+//	a = 20;//= 赋值       == 判断相等
+//	a = a + 10;
+//	a += 10;
+//	a = a - 20;
+//	a -= 20;
+//}
+
+//位操作符
+// int main()
+//{
+//	//（2进制）位操作
+//	// & - 按位与（和）
+//	// | - 按位或
+//	// ^ - 按位异或
+//	//异或的计算规律：对应的二进制位相同位0，相异则为1
+//	int a = 3;
+//	int b = 5;
+//	int c = a & b;//和时只要有一个是假都是假（0）
+//	//a为011
+//	//b为101
+//	//c为001=1
+//	printf("%d\n", c);
+//	return 0;
+//}
+//int main()
+//{
+//	//移(2进制)位操作符
+//	// << 左移
+//	// >> 右移
+//	int a = 1;
+//	//整型1占4个字节-32bit位
+//	//00000000000000000000000000000001
+//	int b = a << 1;
+//	//00000000000000000000000000000010
+//	printf("%d\n", b);
+//	return 0;
+//}
+
+//算术操作符
+// int main()
+//{
+//	int a = 5 % 2;//5模2等于余数1
+//	printf("a\n", a);
+//	return 0;
+//}
+
+//数组
+// int main()
+//{
+//	//int a = 1;
+//	//int b = 2;
+//	//int c = 3;
+//	//int d = 4;
+//	//int e = 5;
+//	//int arr[10];//定义一个存放10个整数数字的数组
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	//0-9
+//	int i = 0;
+//	while (i < 10)
+//	{
+//		printf("%d", arr[i]);
+//		i++;
+//	}
+//	//printf("%d\n", arr[4]);//下标的方式访问元素
+//	//arr[下标]
+//	//char ch[20];//定义一个存放20个字符的数组
+//	return 0;
+//}
+
+////函数:自定义函数和库函数
+//int Add(int x, int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
+//
+//int main()
+//{
+//	int num1 = 10;
+//	int num2 = 20;
+//	int sum = 0;
+//	int a = 100;
+//	int b = 200;
+//	//sum = num1 + num2;
+//	sum = Add(num1, num2);
+//	//sum = a + b;
+//	sum = Add(a, b);
+//	printf("sum = %d\n", sum);
+//	return 0;
+//}
+
+////循环语句
+////while循环
+//int main()
+//{
+//	int line = 0;
+//	printf("学习计算机\n");
+//
+//	while (line < 20000)
+//	{
+//		printf("敲一行代码: %d\n", line);
+//		line++;
+//	}
+//	if(line >= 20000)
+//		printf("好offer\n");
+//	return 0;
+//}
+
+
+//选择语句
+// int main()
+//{
+//	int input = 0;
+//	printf("加入\n");
+//	printf("你要好好学习吗？(1/0)>:");
+//	scanf("%d", &input);//1/0
+//	if (input == 1)
+//		printf("好offer\n");
+//	else
+//		printf("卖红薯\n");
+//	return 0;
+//}
+//#include <string.h>
+//int main()
+//{
+//	printf("%d\n", strlen("c:\test\32\test.c"));
+//	//\32 -- 32是2个8进制的数字，即3*8^1+2*8^0=26
+//	//32作为8进制代表的那个十进制数字，作为ASCII码值，对应的字符
+//	//32 -- > 10进制 26 ->作为ASCII码值代表的字符，查表后，即代表一个向右的箭头
+//	return 0;
+//}
+
+//int main()
+//{
+//	printf("c:\\test\\32\\test.c");//\还可以转义\
+//  printf("%c\n",'\'');//输出'
+//  printf("%s\n","\"");//输出"
+//	//\t - 水平制表符
+//	return 0;
+//}
+//int main()
+//{
+//	printf("abc\n");//'\n'表示换行
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr1[] = "abc";
+//	char arr2[] = { 'a','b','c' };
+//	printf("%d\n", strlen(arr1));//strlen - string length - 计算字符串长度的
+//	printf("%d\n", strlen(arr2));//,arr1的长度为3，arr2的长度为随机值
+//	return 0;
+//}
+//int main()
+//{
+//	//数据在计算机上存储的时候，存储的是2进制
+//	//#av$
+//	//a - 97
+//	//A - 65
+//	// ...
+//	//ASCII编码
+//	//ASCII码值
+//	char arr1[] = "abc";//数组
+//	//"abc" -- 'a','b','c','\0' -- '\0'是字符串的结束标志（转义字符）,不是字符串的内容
+//	char arr2[] = { 'a','b','c' };
+//	char arr3[] = { 'a','b','c','\0' };//此时arr3输出和arr1一样
+//
+//	printf("%s\n", arr1);
+//	printf("%s\n", arr2);//输出结果不一样
+//
+//	return 0;
+//}
+////4.枚举常量
+////枚举-一一列举
+////
+////性别：男，女，保密
+////三原色：红，黄，蓝
+////星期：1,2,3,4,5,6,7
+//
+////枚举关键字 - enum
+//
+//enum Color
+//{
+//	RED,
+//	YELLOW,
+//	BLUE
+//};
+//
+//int main()
+//{
+//	enum Color color = BLUE;
+//  color = YELLOW;//color能改，但是枚举常量的BULE,RED等不能改
+//	return 0;
+//}
+//enum Sex
+//{
+//	MALE,
+//	FEMALE,
+//	SECRET
+//};
+////MALE,FEMALE.SECRET - 枚举常量，有值且不可被改变
+//int main()
+//{
+//	//enum Sex s = FEMALE
+//	printf("%d\n", MALE);//默认值为0
+//	printf("%d\n", FEMALE);//默认值为1
+//	printf("%d\n", SECRET);//默认值为2
+//	return 0;
+//}
+
+////3.#define 定义的标识符常量
+//#define MAX 10
+//
+//int main()
+//{
+//	int arr[MAX] = { 0 };
+//	printf("%d\n", MAX);
+//	return 0;
+//}
+//int main()
+//{
+//	const int n = 10;//n是变量，但是又有常属性，所以我们说n是常变量
+//	int arr[n] = { 0 };
+//	return 0;
+//}
+//int main()
+//{
+//	//2.const - 常属性
+//	const int num = 4;//num为const修饰的常变量
+//	int num = 4;
+//	printf("%d\n", num);
+//	num = 8;
+//	printf("%d\n", num);
+//}
+//int main()
+//{
+//	int num = 4;
+//	3;//1.字面常量
+//	100;
+//	3.14;
+//}
+//int main()
+//{
+//	int num1 = 0;
+//	int num2 = 0;
+//	int sum = 0;
+//	scanf("%d%d", &num1, &num2);
+//	sum = num1 + num2;
+//	printf("sum = %d\n", sum);
+//	return 0;
+//}
